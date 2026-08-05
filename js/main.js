@@ -27,4 +27,35 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('visit-count', visits);
         visitEl.textContent = visits;
     }
+
+    // 目录高亮（滚动监听）
+    var tocList = document.getElementById('toc-list');
+    var articleContent = document.getElementById('article-content');
+
+    if (tocList && articleContent) {
+        var headings = articleContent.querySelectorAll('h2[id], h3[id], h4[id]');
+        var tocLinks = tocList.querySelectorAll('a');
+
+        function highlightToc() {
+            var scrollPos = window.scrollY + 100;
+            var current = null;
+
+            headings.forEach(function (heading) {
+                if (heading.offsetTop <= scrollPos) {
+                    current = heading.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(function (link) {
+                link.classList.remove('active');
+                var href = link.getAttribute('href');
+                if (href && href.substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightToc);
+        highlightToc();
+    }
 });

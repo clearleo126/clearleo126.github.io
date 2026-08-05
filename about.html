@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 顶部导航 -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">My Blog</a>
@@ -23,40 +23,83 @@
         </div>
     </nav>
 
-    <!-- 关于页内容 -->
-    <main class="main-content">
-        <div class="about-container">
-            <h1 class="about-title">关于</h1>
+    <!-- 主体内容 -->
+    <div id="wrap">
+        <div class="content">
+            <main id="main">
+                <div class="wrap-card">
+                    <h1 class="page-title">关于</h1>
 
-            <section class="about-section">
-                <h2>个人简介</h2>
-                <p>这里填写你的个人简介。例如：我是一名学生/开发者，对计算机科学和技术充满热情。</p>
-                <p>我感兴趣的技术领域包括：Web 开发、人工智能、系统编程等。</p>
-            </section>
+                    <section class="about-section">
+                        <h2>个人简介</h2>
+                        <p>你好，这里是 My Blog。我是一名热爱技术的学习者，喜欢记录学习过程中的点滴，也乐于分享一些技术心得。</p>
+                        <p>这个博客基于 GitHub Pages 搭建，参考了 <a href="https://d-sketon.github.io/" target="_blank">D-Sketon</a> 的 hexo-theme-reimu 主题风格。</p>
+                    </section>
 
-            <section class="about-section">
-                <h2>联系方式</h2>
-                <ul class="contact-list">
-                    <li><strong>Email：</strong> <a href="mailto:your@email.com">your@email.com</a></li>
-                    <li><strong>GitHub：</strong> <a href="https://github.com/clearleo126" target="_blank">clearleo126</a></li>
-                    <li><strong>博客：</strong> <a href="https://clearleo126.github.io">clearleo126.github.io</a></li>
-                </ul>
-            </section>
+                    <section class="about-section">
+                        <h2>联系方式</h2>
+                        <ul class="contact-list">
+                            <li><strong>Email：</strong> <a href="mailto:your@email.com">your@email.com</a></li>
+                            <li><strong>GitHub：</strong> <a href="https://github.com/clearleo126" target="_blank">clearleo126</a></li>
+                            <li><strong>博客：</strong> <a href="https://clearleo126.github.io">clearleo126.github.io</a></li>
+                        </ul>
+                    </section>
 
-            <section class="about-section">
-                <h2>兴趣 / Hobbies</h2>
-                <p>这里填写你的兴趣爱好。例如：编程、阅读、旅行、音乐等。</p>
-            </section>
+                    <section class="about-section">
+                        <h2>兴趣爱好</h2>
+                        <p>编程、阅读、开源、计算机网络、前端开发，以及一切有趣的技术。</p>
+                    </section>
+                </div>
+            </main>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#">JavaScript</a>
+                        <a href="#">计算机网络</a>
+                        <a href="#">Hexo</a>
+                        <a href="#">CSAPP</a>
+                        <a href="#">Java</a>
+                        <a href="#">前端</a>
+                    </div>
+                </div>
+            </aside>
         </div>
-    </main>
+    </div>
 
     <!-- 底部 -->
     <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-quote">白云一片去悠悠，青枫浦上不胜愁。</p>
-            <div class="footer-info">
-                <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4 class="footer-col-title">My Blog</h4>
+                <p>记录学习与生活，分享技术与思考。</p>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">站点统计</h4>
+                <div class="footer-stats">
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">75</div>
+                        <div class="footer-stat-label">文章</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">10</div>
+                        <div class="footer-stat-label">分类</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">19</div>
+                        <div class="footer-stat-label">标签</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">链接</h4>
+                <p><a href="about.html">关于</a> · <a href="friends.html">友链</a> · <a href="archives.html">归档</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
         </div>
     </footer>
 

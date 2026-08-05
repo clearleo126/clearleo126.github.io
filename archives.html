@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 顶部导航 -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">My Blog</a>
@@ -23,75 +23,145 @@
         </div>
     </nav>
 
-    <!-- 归档内容区 -->
-    <main class="main-content">
-        <div class="archives-container">
-            <h1 class="archives-title">归档</h1>
+    <!-- 主体内容 -->
+    <div id="wrap">
+        <div class="content">
+            <main id="main">
+                <div class="wrap-card">
+                    <h1 class="page-title">归档</h1>
 
-            <!-- 按年份分组 -->
-            <div class="archive-year-group">
-                <h2 class="archive-year">2026</h2>
-                <ul class="archive-list">
-                    <li class="archive-item">
-                        <span class="archive-date">08-01</span>
-                        <a href="#" class="archive-link">文章标题示例一</a>
-                    </li>
-                    <li class="archive-item">
-                        <span class="archive-date">07-15</span>
-                        <a href="#" class="archive-link">文章标题示例二</a>
-                    </li>
-                    <li class="archive-item">
-                        <span class="archive-date">06-20</span>
-                        <a href="#" class="archive-link">文章标题示例三</a>
-                    </li>
-                    <li class="archive-item">
-                        <span class="archive-date">05-10</span>
-                        <a href="#" class="archive-link">文章标题示例四</a>
-                    </li>
-                </ul>
-            </div>
+                    <div class="archive-year-group">
+                        <h2 class="archive-year">2025</h2>
+                        <ul class="archive-list">
+                            <li class="archive-item">
+                                <span class="archive-date">11-01</span>
+                                <a href="post.html" class="archive-link">2025年 JavaScript Promise 性能对比</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">10-15</span>
+                                <a href="post.html" class="archive-link">CSAPP - CacheLab 解题记录</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">09-27</span>
+                                <a href="post.html" class="archive-link">2025年 Hexo 速度真的很慢吗？</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">02-23</span>
+                                <a href="post.html" class="archive-link">如何为 Hexo 添加多语言支持</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">01-31</span>
+                                <a href="post.html" class="archive-link">我是如何让 Hexo 占用的内存减少 30% 的</a>
+                            </li>
+                        </ul>
+                    </div>
 
-            <div class="archive-year-group">
-                <h2 class="archive-year">2025</h2>
-                <ul class="archive-list">
-                    <li class="archive-item">
-                        <span class="archive-date">12-30</span>
-                        <a href="#" class="archive-link">文章标题示例五</a>
-                    </li>
-                    <li class="archive-item">
-                        <span class="archive-date">10-15</span>
-                        <a href="#" class="archive-link">文章标题示例六</a>
-                    </li>
-                    <li class="archive-item">
-                        <span class="archive-date">06-01</span>
-                        <a href="#" class="archive-link">文章标题示例七</a>
-                    </li>
-                </ul>
-            </div>
+                    <div class="archive-year-group">
+                        <h2 class="archive-year">2024</h2>
+                        <ul class="archive-list">
+                            <li class="archive-item">
+                                <span class="archive-date">12-21</span>
+                                <a href="post.html" class="archive-link">2024年 JavaScript Promise 性能对比</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">11-24</span>
+                                <a href="post.html" class="archive-link">如何定制你的 hexo-theme-reimu</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">10-19</span>
+                                <a href="post.html" class="archive-link">Hexo 博客性能优化指南</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">08-01</span>
+                                <a href="post.html" class="archive-link">生活随笔：夏日尾声</a>
+                            </li>
+                        </ul>
+                    </div>
 
-            <div class="archive-year-group">
-                <h2 class="archive-year">2024</h2>
-                <ul class="archive-list">
-                    <li class="archive-item">
-                        <span class="archive-date">12-27</span>
-                        <a href="#" class="archive-link">文章标题示例八</a>
-                    </li>
-                    <li class="archive-item">
-                        <span class="archive-date">08-01</span>
-                        <a href="#" class="archive-link">文章标题示例九</a>
-                    </li>
-                </ul>
-            </div>
+                    <div class="archive-year-group">
+                        <h2 class="archive-year">2021</h2>
+                        <ul class="archive-list">
+                            <li class="archive-item">
+                                <span class="archive-date">10-23</span>
+                                <a href="post.html" class="archive-link">计算机网络-数据链路层 学习笔记</a>
+                            </li>
+                            <li class="archive-item">
+                                <span class="archive-date">10-20</span>
+                                <a href="post.html" class="archive-link">计算机网络-物理层 学习笔记</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pagination">
+                        <span class="page-current">1</span>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <span>...</span>
+                        <a href="#" class="page-link">7</a>
+                        <a href="#" class="page-next">下一页 »</a>
+                    </div>
+                </div>
+            </main>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#">JavaScript</a>
+                        <a href="#">计算机网络</a>
+                        <a href="#">Hexo</a>
+                        <a href="#">CSAPP</a>
+                        <a href="#">Java</a>
+                        <a href="#">前端</a>
+                        <a href="#">算法</a>
+                        <a href="#">生活</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">分类</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">学习笔记 <span class="count">9</span></a></li>
+                        <li><a href="#">技术随笔 <span class="count">21</span></a></li>
+                        <li><a href="#">生活杂谈 <span class="count">5</span></a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-    </main>
+    </div>
 
     <!-- 底部 -->
     <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-quote">白云一片去悠悠，青枫浦上不胜愁。</p>
-            <div class="footer-info">
-                <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4 class="footer-col-title">My Blog</h4>
+                <p>记录学习与生活，分享技术与思考。</p>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">站点统计</h4>
+                <div class="footer-stats">
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">75</div>
+                        <div class="footer-stat-label">文章</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">10</div>
+                        <div class="footer-stat-label">分类</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">19</div>
+                        <div class="footer-stat-label">标签</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">链接</h4>
+                <p><a href="about.html">关于</a> · <a href="friends.html">友链</a> · <a href="archives.html">归档</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
         </div>
     </footer>
 

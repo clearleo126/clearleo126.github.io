@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 顶部导航 -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">My Blog</a>
             <ul class="nav-menu">
-                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html" class="active">首页</a></li>
                 <li><a href="archives.html">归档</a></li>
                 <li><a href="about.html">关于</a></li>
                 <li><a href="friends.html">友链</a></li>
@@ -23,81 +23,187 @@
         </div>
     </nav>
 
-    <!-- 主要内容区 -->
-    <main class="main-content">
-        <div class="post-list">
-            <!-- 文章卡片 -->
-            <article class="post-card">
-                <h2 class="post-title"><a href="#">文章标题示例一</a></h2>
-                <div class="post-meta">
-                    <span class="post-date">2026-08-01</span>
-                    <span class="post-category"><a href="#">分类一</a></span>
-                </div>
-                <div class="post-excerpt">
-                    <p>这里是文章摘要内容。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                </div>
-                <a href="#" class="read-more">阅读全文 →</a>
-            </article>
-
-            <article class="post-card">
-                <h2 class="post-title"><a href="#">文章标题示例二</a></h2>
-                <div class="post-meta">
-                    <span class="post-date">2026-07-15</span>
-                    <span class="post-category"><a href="#">分类二</a></span>
-                </div>
-                <div class="post-excerpt">
-                    <p>这里是文章摘要内容。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-                </div>
-                <a href="#" class="read-more">阅读全文 →</a>
-            </article>
-
-            <article class="post-card">
-                <h2 class="post-title"><a href="#">文章标题示例三</a></h2>
-                <div class="post-meta">
-                    <span class="post-date">2026-06-20</span>
-                    <span class="post-category"><a href="#">分类一</a></span>
-                </div>
-                <div class="post-excerpt">
-                    <p>这里是文章摘要内容。Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                </div>
-                <a href="#" class="read-more">阅读全文 →</a>
-            </article>
-
-            <article class="post-card">
-                <h2 class="post-title"><a href="#">文章标题示例四</a></h2>
-                <div class="post-meta">
-                    <span class="post-date">2026-05-10</span>
-                    <span class="post-category"><a href="#">分类三</a></span>
-                </div>
-                <div class="post-excerpt">
-                    <p>这里是文章摘要内容。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt...</p>
-                </div>
-                <a href="#" class="read-more">阅读全文 →</a>
-            </article>
-
-            <!-- 分页 -->
-            <div class="pagination">
-                <span class="page-current">1</span>
-                <a href="#" class="page-link">2</a>
-                <a href="#" class="page-next">下一页 →</a>
-            </div>
+    <!-- 首页头部 -->
+    <header class="header-hero">
+        <div class="hero-inner">
+            <div class="hero-avatar">M</div>
+            <h1 class="hero-title">My Blog</h1>
+            <p class="hero-subtitle">记录学习与生活</p>
+            <p class="hero-desc">Stay hungry, stay foolish.</p>
         </div>
-    </main>
+    </header>
+
+    <!-- 主体内容 -->
+    <div id="wrap">
+        <div class="content">
+            <main id="main">
+                <!-- 分类卡片 -->
+                <div class="category-grid">
+                    <a href="#" class="category-card">
+                        <div class="category-name">学习笔记</div>
+                        <div class="category-count">9 篇文章</div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-name">技术随笔</div>
+                        <div class="category-count">21 篇文章</div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-name">生活杂谈</div>
+                        <div class="category-count">5 篇文章</div>
+                    </a>
+                </div>
+
+                <!-- 文章列表 -->
+                <div class="post-list">
+                    <article class="post-card">
+                        <div class="post-card-main">
+                            <h2 class="post-title"><a href="post.html">计算机网络-数据链路层 学习笔记</a></h2>
+                            <div class="post-meta">
+                                <span>📅 2021-10-23</span>
+                                <span>📝 7.5k 字</span>
+                                <span>⏱️ 33 分钟</span>
+                                <span>🏷️ <a href="#">计算机网络</a></span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>负责在链路上传递数据帧、处理传输错误、调节数据流。本文整理数据链路层的核心概念，包括链路分类、成帧、差错检测以及滑动窗口协议等内容。</p>
+                            </div>
+                        </div>
+                        <div class="post-card-thumb">封面图</div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-card-main">
+                            <h2 class="post-title"><a href="post.html">计算机网络-物理层 学习笔记</a></h2>
+                            <div class="post-meta">
+                                <span>📅 2021-10-20</span>
+                                <span>📝 5.2k 字</span>
+                                <span>⏱️ 25 分钟</span>
+                                <span>🏷️ <a href="#">计算机网络</a></span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>物理层是计算机网络的最底层，负责在物理媒体上传输原始比特流。本文介绍物理层的基本概念、传输介质、编码方式以及奈奎斯特定理等内容。</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-card-main">
+                            <h2 class="post-title"><a href="post.html">2025年 JavaScript Promise 性能对比</a></h2>
+                            <div class="post-meta">
+                                <span>📅 2025-11-01</span>
+                                <span>📝 2.4k 字</span>
+                                <span>⏱️ 13 分钟</span>
+                                <span>🏷️ <a href="#">JavaScript</a></span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>本文对 2025 年 JavaScript Promise 的性能进行对比，看看这几年 Node 原生 Promise 的性能有没有提升？后起之秀 Bun 的 Promise 实现又有怎样的表现？</p>
+                            </div>
+                        </div>
+                        <div class="post-card-thumb">封面图</div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-card-main">
+                            <h2 class="post-title"><a href="post.html">如何为 Hexo 添加多语言支持</a></h2>
+                            <div class="post-meta">
+                                <span>📅 2025-02-23</span>
+                                <span>📝 2k 字</span>
+                                <span>⏱️ 9 分钟</span>
+                                <span>🏷️ <a href="#">Hexo</a></span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>Hexo 原生对多语言的支持能力有限。本文介绍如何为 Hexo 博客添加多语言支持，包括页面、文章和归档的多语言化方案。</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-card-main">
+                            <h2 class="post-title"><a href="post.html">CSAPP - CacheLab 解题记录</a></h2>
+                            <div class="post-meta">
+                                <span>📅 2025-10-15</span>
+                                <span>📝 3.1k 字</span>
+                                <span>⏱️ 18 分钟</span>
+                                <span>🏷️ <a href="#">CSAPP</a></span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>CacheLab 是 CSAPP 课程中关于缓存的实验，包括 Part A 的缓存模拟器和 Part B 的矩阵转置优化。本文记录解题思路和关键代码。</p>
+                            </div>
+                        </div>
+                        <div class="post-card-thumb">封面图</div>
+                    </article>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination">
+                    <span class="page-current">1</span>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <span>...</span>
+                    <a href="#" class="page-link">7</a>
+                    <a href="#" class="page-next">下一页 »</a>
+                </div>
+            </main>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#">JavaScript</a>
+                        <a href="#">计算机网络</a>
+                        <a href="#">Hexo</a>
+                        <a href="#">CSAPP</a>
+                        <a href="#">Java</a>
+                        <a href="#">前端</a>
+                        <a href="#">算法</a>
+                        <a href="#">生活</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">分类</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">学习笔记 <span class="count">9</span></a></li>
+                        <li><a href="#">技术随笔 <span class="count">21</span></a></li>
+                        <li><a href="#">生活杂谈 <span class="count">5</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
 
     <!-- 底部 -->
     <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-quote">白云一片去悠悠，青枫浦上不胜愁。</p>
-            <div class="footer-tags">
-                <span class="footer-tags-title">热门标签</span>
-                <a href="#">标签一</a>
-                <a href="#">标签二</a>
-                <a href="#">标签三</a>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4 class="footer-col-title">My Blog</h4>
+                <p>记录学习与生活，分享技术与思考。</p>
             </div>
-            <div class="footer-info">
-                <p>文章数目：4 篇 · 本站总访问量：<span id="visit-count">0</span> 次</p>
-                <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
+            <div class="footer-col">
+                <h4 class="footer-col-title">站点统计</h4>
+                <div class="footer-stats">
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">75</div>
+                        <div class="footer-stat-label">文章</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">10</div>
+                        <div class="footer-stat-label">分类</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">19</div>
+                        <div class="footer-stat-label">标签</div>
+                    </div>
+                </div>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">链接</h4>
+                <p><a href="about.html">关于</a> · <a href="friends.html">友链</a> · <a href="archives.html">归档</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
         </div>
     </footer>
 

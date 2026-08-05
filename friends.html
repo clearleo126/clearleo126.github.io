@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 顶部导航 -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">My Blog</a>
@@ -23,55 +23,102 @@
         </div>
     </nav>
 
-    <!-- 友链内容区 -->
-    <main class="main-content">
-        <div class="friends-container">
-            <h1 class="friends-title">友情链接</h1>
-            <p class="friends-desc">欢迎在评论区或通过邮件联系我交换友链！</p>
+    <!-- 主体内容 -->
+    <div id="wrap">
+        <div class="content">
+            <main id="main">
+                <div class="wrap-card">
+                    <h1 class="page-title">友情链接</h1>
 
-            <div class="friends-grid">
-                <div class="friend-card">
-                    <div class="friend-avatar">A</div>
-                    <div class="friend-info">
-                        <h3 class="friend-name"><a href="#" target="_blank">好友站点一</a></h3>
-                        <p class="friend-desc">这里填写好友站点的描述信息。</p>
+                    <section class="friends-section">
+                        <h2>我的朋友们</h2>
+                        <p style="color: var(--grey-9); margin-bottom: 20px;">欢迎在评论区或通过邮件联系我交换友链！</p>
+
+                        <div class="friends-grid">
+                            <div class="friend-card">
+                                <div class="friend-avatar">D</div>
+                                <div class="friend-info">
+                                    <h3 class="friend-name"><a href="https://d-sketon.github.io/" target="_blank">D-Sketon</a></h3>
+                                    <p class="friend-desc">hexo-theme-reimu 主题作者</p>
+                                </div>
+                            </div>
+
+                            <div class="friend-card">
+                                <div class="friend-avatar">A</div>
+                                <div class="friend-info">
+                                    <h3 class="friend-name"><a href="#" target="_blank">好友站点一</a></h3>
+                                    <p class="friend-desc">这里填写好友站点的描述信息。</p>
+                                </div>
+                            </div>
+
+                            <div class="friend-card">
+                                <div class="friend-avatar">B</div>
+                                <div class="friend-info">
+                                    <h3 class="friend-name"><a href="#" target="_blank">好友站点二</a></h3>
+                                    <p class="friend-desc">这里填写好友站点的描述信息。</p>
+                                </div>
+                            </div>
+
+                            <div class="friend-card">
+                                <div class="friend-avatar">C</div>
+                                <div class="friend-info">
+                                    <h3 class="friend-name"><a href="#" target="_blank">好友站点三</a></h3>
+                                    <p class="friend-desc">这里填写好友站点的描述信息。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#">JavaScript</a>
+                        <a href="#">计算机网络</a>
+                        <a href="#">Hexo</a>
+                        <a href="#">CSAPP</a>
+                        <a href="#">Java</a>
+                        <a href="#">前端</a>
                     </div>
                 </div>
-
-                <div class="friend-card">
-                    <div class="friend-avatar">B</div>
-                    <div class="friend-info">
-                        <h3 class="friend-name"><a href="#" target="_blank">好友站点二</a></h3>
-                        <p class="friend-desc">这里填写好友站点的描述信息。</p>
-                    </div>
-                </div>
-
-                <div class="friend-card">
-                    <div class="friend-avatar">C</div>
-                    <div class="friend-info">
-                        <h3 class="friend-name"><a href="#" target="_blank">好友站点三</a></h3>
-                        <p class="friend-desc">这里填写好友站点的描述信息。</p>
-                    </div>
-                </div>
-
-                <div class="friend-card">
-                    <div class="friend-avatar">D</div>
-                    <div class="friend-info">
-                        <h3 class="friend-name"><a href="#" target="_blank">好友站点四</a></h3>
-                        <p class="friend-desc">这里填写好友站点的描述信息。</p>
-                    </div>
-                </div>
-            </div>
+            </aside>
         </div>
-    </main>
+    </div>
 
     <!-- 底部 -->
     <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-quote">白云一片去悠悠，青枫浦上不胜愁。</p>
-            <div class="footer-info">
-                <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4 class="footer-col-title">My Blog</h4>
+                <p>记录学习与生活，分享技术与思考。</p>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">站点统计</h4>
+                <div class="footer-stats">
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">75</div>
+                        <div class="footer-stat-label">文章</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">10</div>
+                        <div class="footer-stat-label">分类</div>
+                    </div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-value">19</div>
+                        <div class="footer-stat-label">标签</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">链接</h4>
+                <p><a href="about.html">关于</a> · <a href="friends.html">友链</a> · <a href="archives.html">归档</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 My Blog. Powered by GitHub Pages.</p>
         </div>
     </footer>
 
