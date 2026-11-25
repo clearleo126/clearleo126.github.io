@@ -1,0 +1,109 @@
+{{- if .Site.Params.preloader.enable -}}
+  <div id="loader">
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div id="loader-anime" class="loading-anime"></div>
+      {{- $languageCode := .Site.Language.Locale -}}
+      {{- $text := .Site.Params.preloader.text -}}
+      {{- $realText := "" -}}
+      {{- if reflect.IsMap $text -}}
+        {{- $realText = index $text $languageCode -}}
+        {{- if not $realText -}}
+          {{- $realText = index $text "en" -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $realText = $text -}}
+      {{- end -}}
+      {{- if $realText -}}
+        <div class="loading-word">{{ $realText }}</div>
+      {{- end -}}
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.3.3/dist/pixi.min.js"></script>
+  <script src="{{ "anime/loader.js" | relURL }}"></script>
+  <script>
+    var loaderEl = document.getElementById('loader');
+    var MIN_DISPLAY = 3000;      // 纺车至少播放 3 秒（正好一个完整周期）
+    var MAX_DISPLAY = 10000;     // 兜底上限：头图始终加载不出来时也会收尾
+    var startedAt = Date.now();
+    var bannerReady = false;
+    var hiding = false;
+    var domReady = false;   // 新页面内容就位后才开始检测头图，避免读到上一页的头图
+
+    var anime = function () { return window.__reimuLoaderAnime; };
+
+    var hideLoader = () => {
+      if (hiding) return;
+      hiding = true;
+      // 纺车停住，随后随遮罩一起淡出，形成自然收尾
+      if (anime() && anime().pause) anime().pause();
+      document.body.style.overflow = 'auto';
+      loaderEl.classList.add('loading');
+    };
+
+    var maybeHide = () => {
+      if (hiding) return;
+      var elapsed = Date.now() - startedAt;
+      if ((bannerReady && elapsed >= MIN_DISPLAY) || elapsed >= MAX_DISPLAY) {
+        hideLoader();
+      }
+    };
+
+    // 检测头图是否已经真正显示出来
+    var bannerSettled = () => {
+      var img = document.querySelector('#header > img, #header > picture img');
+      if (!img || !img.getAttribute('src')) return true; // 没有头图或只是占位
+      return img.complete;                               // 加载完成（含失败）
+    };
+
+    var checkBanner = () => {
+      if (bannerReady || !domReady) return;
+      if (bannerSettled()) {
+        bannerReady = true;
+        maybeHide();
+      }
+    };
+
+    var startLoading = () => {
+      startedAt = Date.now();
+      bannerReady = false;
+      hiding = false;
+      domReady = false;
+      if (anime() && anime().resume) anime().resume();
+      loaderEl.classList.remove('loading');
+    };
+
+    var endLoading = () => {
+      domReady = true;
+      checkBanner();
+      maybeHide();
+    };
+
+    window.addEventListener('reimu:banner-ready', function () {
+      bannerReady = true;
+      maybeHide();
+    });
+
+    window.addEventListener('DOMContentLoaded', endLoading);
+    setInterval(function () { checkBanner(); maybeHide(); }, 100);
+    loaderEl.addEventListener('click', hideLoader);
+  </script>
+{{- end -}}
+
+<div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+{{ i18n "multi_language.not_found" }}
+</div>
+<div id="heatmap-tooltip"></div>
+
+{{- if .Site.Params.service_worker.enable -}}
+  <div class="notification-wrapper">
+    <h1>{{ i18n "service_worker.title" }}</h1>
+    <p>{{ i18n "service_worker.content" }}</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">{{ i18n "service_worker.confirm" }}</button>
+      <button id="notification-close-btn">{{ i18n "service_worker.cancel" }}</button>
+    </div>
+  </div>
+{{- end -}}

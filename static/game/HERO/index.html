@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>H.E.R.O. — Atari 复刻</title>
+  <link rel="icon" href="assets/icon.jpg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="cabinet">
+    <div class="brand">ACTIVISION-STYLE · MOUNT LEONE · 1984 / 2026</div>
+    <div class="screen-bezel">
+      <canvas id="game" width="320" height="200" tabindex="0" aria-label="H.E.R.O. game"></canvas>
+      <div class="scanlines"></div>
+      <div class="vignette"></div>
+      <div id="overlay"><div id="overlay-root"></div></div>
+      <div id="touch">
+        <div class="pad up">▲</div>
+        <div class="pad down">▼</div>
+        <div class="pad left">◀</div>
+        <div class="pad right">▶</div>
+        <div class="pad bomb">炸药</div>
+        <div class="pad laser">激光</div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>R. HERO · PROP-PACK</span>
+      <span>全部文件在本文件夹，双击 play.bat 即可</span>
+    </div>
+  </div>
+  <script src="js/audio.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

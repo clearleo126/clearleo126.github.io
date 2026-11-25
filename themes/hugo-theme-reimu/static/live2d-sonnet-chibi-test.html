@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sonnet Chibi (Q版) Test</title>
+    <link rel="stylesheet" href="/resources/spine-player/spine-player.min.css">
+    <style>
+        body { margin: 0; background: #f0f0f0; display: flex; gap: 20px; padding: 20px; }
+        #stage { width: 300px; height: 400px; }
+        #log { font: 12px monospace; white-space: pre-wrap; max-width: 560px; }
+        a { margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="stage"></div>
+        <p>
+            <a href="?v=room">room</a>
+            <a href="?v=ui">ui</a>
+            <a href="?v=fight">fight</a>
+        </p>
+    </div>
+    <div id="log">loading...</div>
+    <script src="/resources/spine-player/spine-player.min.js"></script>
+    <script>
+        const log = (s) => { document.getElementById("log").textContent += "\n" + s; };
+        const variant = new URLSearchParams(location.search).get("v") || "room";
+        log("variant: " + variant);
+        new spine.SpinePlayer("stage", {
+            binaryUrl: `/live2d/sonnet-chibi/302301_shisihangshi_${variant}.skel`,
+            atlasUrl: "/live2d/sonnet-chibi/302301_shisihangshi.atlas",
+            showControls: false,
+            alpha: true,
+            backgroundColor: "#00000000",
+            success: (player) => {
+                const anims = player.animationState.data.skeletonData.animations.map((a) => a.name);
+                log("animations: " + anims.join(", "));
+                const idle = anims.find((a) => /idle|daiji|stand|wait/i.test(a)) || anims[0];
+                // 必须走 player.setAnimation：内部会按动画包围盒计算视口
+                player.setAnimation(idle, true);
+                log("playing: " + idle);
+            },
+            error: (e) => log("ERROR: " + e),
+        });
+    </script>
+</body>
+</html>

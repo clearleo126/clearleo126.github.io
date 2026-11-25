@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sonnet Live2D Test</title>
+    <style>
+        body { margin: 0; background: #f0f0f0; }
+        #stage { width: 300px; height: 400px; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <div id="stage"></div>
+    <script src="/resources/pixi-live2d/live2dcubismcore.min.js"></script>
+    <script src="/resources/pixi-live2d/pixi.min.js"></script>
+    <script src="/resources/pixi-live2d/cubism4.min.js"></script>
+    <script>
+        const app = new PIXI.Application({
+            width: 300,
+            height: 400,
+            backgroundAlpha: 0,
+            view: document.createElement('canvas')
+        });
+        document.getElementById('stage').appendChild(app.view);
+
+        PIXI.live2d.Live2DModel.from('/live2d/sonnet/302301_shisihangshi.model3.json').then((model) => {
+            // 缩放到容器宽度 300px（模型原始画布通常很大，先按高度适配试看效果）
+            const scale = Math.min(300 / model.width, 400 / model.height);
+            model.scale.set(scale);
+            model.anchor.set(0.5, 0.5);
+            model.x = 150;
+            model.y = 200;
+            app.stage.addChild(model);
+            // 开始 idle 动作
+            model.motion('b_idle');
+            console.log('model loaded', model.internalModel);
+        }).catch(console.error);
+    </script>
+</body>
+</html>

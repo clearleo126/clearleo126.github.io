@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>smoke</title>
+<body>loading</body>
+<script src="../js/audio.js"></script>
+<script src="../js/sprites.js"></script>
+<script src="../js/levels.js"></script>
+<script>
+try {
+  const issues = [];
+  if (!window.HERO_AUDIO) issues.push("no audio");
+  if (!window.HERO_SPRITES || !HERO_SPRITES.heroFly) issues.push("no sprites");
+  if (!window.HERO_LEVELS || HERO_LEVELS.count !== 20) issues.push("levels " + (HERO_LEVELS && HERO_LEVELS.count));
+  for (let i = 0; i < 20; i++) {
+    const m = HERO_LEVELS.get(i);
+    const text = m.join("\n");
+    if (!text.includes("P")) issues.push("L" + (i + 1) + " missing P");
+    if (!text.includes("W")) issues.push("L" + (i + 1) + " missing W");
+    if (m[0].length !== 40) issues.push("L" + (i + 1) + " width " + m[0].length);
+  }
+  document.body.textContent = issues.length ? "FAIL " + issues.join("; ") : "OK 20 levels + sprites + audio";
+} catch (e) {
+  document.body.textContent = "ERR " + e;
+}
+</script>

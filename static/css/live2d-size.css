@@ -1,0 +1,15 @@
+#live2d-plugin #live2d {
+  width: 110px !important;
+  height: 150px !important;
+}
+
+#live2d-plugin {
+  right: -1px !important;
+  left: auto !important;
+  bottom: 78px !important;
+}
+
+#live2d-plugin #live2d-tips {
+  right: 10px;
+  left: auto;
+}

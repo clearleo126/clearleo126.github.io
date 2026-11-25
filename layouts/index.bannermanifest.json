@@ -1,0 +1,19 @@
+{{- $exts := slice ".jpg" ".jpeg" ".png" ".webp" ".gif" ".avif" -}}
+{{- $exclude := slice "icon.png" "temp-icon.png" "banner.webp" "desktop.ini" -}}
+{{- $banner := slice -}}
+{{- if fileExists "static/banner" -}}
+  {{- range os.ReadDir "static/banner" -}}
+    {{- if and (not .IsDir) (in $exts (lower (path.Ext .Name))) -}}
+      {{- $banner = $banner | append (printf "/banner/%s" .Name) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $banner) 0 -}}{{ $banner | jsonify }}{{- else -}}
+{{- $images := slice -}}
+{{- range os.ReadDir "static/images" -}}
+  {{- $ext := lower (path.Ext .Name) -}}
+  {{- if and (not .IsDir) (in $exts $ext) (not (in $exclude .Name)) -}}
+    {{- $images = $images | append (printf "/images/%s" .Name) -}}
+  {{- end -}}
+{{- end -}}{{ $images | jsonify }}
+{{- end -}}

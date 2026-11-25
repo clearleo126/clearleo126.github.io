@@ -1,0 +1,80 @@
+:root:root *,
+:root *,
+* {
+  cursor: none !important;
+}
+
+:root:root {
+  --cursor-pointer: none;
+  --cursor-text: none;
+  --cursor-default: none;
+}
+
+:root .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap,
+:root .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap {
+  cursor: none !important;
+}
+
+.reimu-cursor {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 99999;
+  pointer-events: none;
+  background: var(--red-1);
+  border: 1px solid #fff;
+  animation-duration: 0.3s;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.reimu-cursor-big {
+  width: 50px;
+  height: 50px;
+  background: var(--red-1);
+  animation-name: reimu-cursor-grow;
+}
+
+.reimu-cursor-mid {
+  background: var(--red-2);
+  border: 1px solid #fff;
+}
+
+.reimu-cursor-small {
+  background: var(--red-1);
+  border: 1px solid #fff;
+  animation-name: reimu-cursor-shrink;
+}
+
+.reimu-cursor-link {
+  width: 14.7px;
+  height: 14.7px;
+  background: var(--red-1);
+  border: 1px solid #fff;
+}
+
+@keyframes reimu-cursor-grow {
+  0% { width: 12px; height: 12px; }
+  25% { width: 21px; height: 21px; }
+  50% { width: 30px; height: 30px; }
+  75% { width: 40px; height: 40px; }
+  100% { width: 50px; height: 50px; }
+}
+
+@keyframes reimu-cursor-shrink {
+  0% { width: 20px; height: 20px; }
+  25% { width: 18px; height: 18px; }
+  50% { width: 16px; height: 16px; }
+  75% { width: 14px; height: 14px; }
+  100% { width: 12px; height: 12px; }
+}
+
+@keyframes reimu-cursor-pulse {
+  0% { opacity: 0.5; }
+  25% { opacity: 0.2; }
+  50% { opacity: 0; }
+  75% { opacity: 0.2; }
+  100% { opacity: 0.5; }
+}
